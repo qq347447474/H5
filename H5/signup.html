@@ -29,26 +29,31 @@
 						 中华 <strong class="text-skin">菜谱</strong>
 					</div>
 
-					<form>
-						<div class="form-group m-bottom-md">
-							<input type="text" class="form-control" placeholder="用户名">
+					<form action="/user/reg" method="post">
+						<div class="form-group m-bottom-md" id="username">
+							<input type="text" class="form-control" name="username" placeholder="用户名">
 						</div>
 						<div class="form-group">
-							<input type="password" class="form-control" placeholder="密码">
+							<input type="password" class="form-control" name="password" placeholder="密码">
 						</div>
 						<div class="form-group">
-							<input type="password" class="form-control" placeholder="再次输入密码">
+							<input type="password" class="form-control"name="repassword" placeholder="再次输入密码">
 						</div>
 						<div class="form-group">
 							<div class="custom-checkbox">
-								<input type="checkbox" id="chkAccept">
+								<input type="checkbox" id="chkAccept" name="isAccept">
 								<label for="chkAccept"></label>
 							</div>
 							我接受此协议
 						</div>
 
+					<span id="errorInfo">
+						${errorMsg!}
+					</span>
+				    
 						<div class="m-top-md p-top-sm">
-							<a href="#" class="btn btn-success block">创建账号</a>
+							<input value="创建账号" type="submit"/>
+							<!--<a href="#" class="btn btn-success block">创建账号</a>-->
 						</div>
 
 						<div class="m-top-md p-top-sm">
@@ -56,6 +61,7 @@
 							<a href="signin.html" class="btn btn-default block">登录</a>
 						</div>
 					</form>
+					
 				</div><!-- ./sign-in-inner -->
 			</div><!-- ./sign-in-wrapper -->
 		</div><!-- /wrapper -->
@@ -84,5 +90,12 @@
 		<!-- Simplify -->
 		<script src="js/simplify/simplify.js"></script>
 	
+	<script>
+	//动态添加错误样式
+//		$('#username').addClass('has-error');
+//错误提示框
+//<div class="alert alert-danger alert-custom alert-dismissible" role="alert">	<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button><i class="fa fa-times-circle m-right-xs"></i> <strong>错误!</strong> Change a few things up and try submitting again.</div>
+//$('#errorInfo').html('<div class="alert alert-danger alert-custom alert-dismissible" role="alert">	<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button><i class="fa fa-times-circle m-right-xs"></i> <strong>错误!</strong> Change a few things up and try submitting again.</div>');
+	</script>
   	</body>
 </html>
